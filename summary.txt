@@ -1,0 +1,18 @@
+For this simulation, i modeled a grocery store in python using simpy with customers going in, shopping, and standing in line to be scanned.
+Each customer had a random number of items (5–20) and shopped at a rate of about 2 items per minute. Checkers could scan about 10 items per minute, and when idle, would gain idle time.
+
+From the simulation, I observed that:
+- Randomizing the shopper arrival times (using an exponential distribution) made the simulation more realistic, creating natural busy and slow periods.
+- Increasing the number of checkers significantly reduced average wait times.
+- However, obviously, idle time increased when more checkers were available compared to the customer flow.
+- Random fluctuations in shopping time and random arrivals caused variability in wait times making it more realistic.
+
+
+Simulation for a 240-minute period of time:
+- About 120 shoppers arrive during the course of 240 minutes, but now with random gaps and rushes.
+- Each shopper needs an average of about 2.25 minutes to checkout.
+- This results in about 270 minutes of total checkout work required.
+- Based on the random arrival model, Approx. 5 checkers provided the best trade-off
+    - 5 checkers led to short wait times with "minimal" idle time (still lots imo).
+    - 6 checkers (as tested) led to extremely short wait times but also increased idle time (rather have happy customers).
+- More than 6 checkers caused noticeable increases in idle time without much further improvement in customer service.
